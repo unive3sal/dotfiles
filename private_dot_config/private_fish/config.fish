@@ -1,5 +1,6 @@
 set -Ux LC_ALL en_US.UTF-8
 set -Ux LANG en_US.UTF-8
+
 set -Ux XDG_CONFIG_HOME $HOME/.config
 set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux XDG_DATA_HOME $HOME/.local/share
@@ -12,11 +13,14 @@ set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 set -gx PYTHON_HISTORY $XDG_DATA_HOME/python_history
+set -gx PYTHONPYCACHEPREFIX $XDG_CACHE_HOME/python
+set -gx PYTHONUSERBASE $XDG_DATA_HOME/python
 set -gx XAUTHORITY $XDG_RUNTIME_DIR/Xauthority
 set -gx PSQLRC $XDG_CONFIG_HOME/pg/psqlrc
 set -gx PSQL_HISTORY $XDG_STATE_HOME/psql_history
 set -gx PGPASSFILE $XDG_CONFIG_HOME/pg/pgpass
 set -gx PGSERVICEFILE $XDG_CONFIG_HOME/pg/pg_service.conf
+set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CC_SWITCH_CONFIG_DIR $XDG_CONFIG_HOME/cc-switch
 set -gx CODEX_HOME $XDG_CONFIG_HOME/codex
 
@@ -30,6 +34,7 @@ fish_add_path -g $HOME/.local/bin
 fish_add_path -g $XDG_DATA_HOME/cargo/bin
 fish_add_path -g $XDG_DATA_HOME/npm/bin
 fish_add_path -g $XDG_DATA_HOME/solana/install/active_release/bin
+fish_add_path -g $XDG_CONFIG_HOME/.foundry/bin
 
 if test -f /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
@@ -40,4 +45,3 @@ if status is-interactive
     tmux new-session -A -s genesis
 end
 
-fish_add_path -a "/home/universal/.config/.foundry/bin"
