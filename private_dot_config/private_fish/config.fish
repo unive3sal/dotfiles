@@ -22,6 +22,7 @@ set -gx PGPASSFILE $XDG_CONFIG_HOME/pg/pgpass
 set -gx PGSERVICEFILE $XDG_CONFIG_HOME/pg/pg_service.conf
 set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CC_SWITCH_CONFIG_DIR $XDG_CONFIG_HOME/cc-switch
+set -gx CLAUDE_CONFIG_DIR $XDG_CONFIG_HOME/claude
 set -gx CODEX_HOME $XDG_CONFIG_HOME/codex
 
 set -gx no_proxy "localhost,127.0.0.1,.noman.work"
