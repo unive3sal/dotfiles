@@ -6,6 +6,7 @@ set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux XDG_DATA_HOME $HOME/.local/share
 set -Ux XDG_STATE_HOME $HOME/.local/state
 
+set -gx HISTFILE $XDG_STATE_HOME/bash/history
 set -gx VSCODE_PORTABLE $XDG_DATA_HOME/vscode
 set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 set -gx EDITOR nvim
