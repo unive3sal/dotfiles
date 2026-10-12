@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/universal/.docker/bin"
+# End of Docker Desktop section.
+
 set -Ux LC_ALL en_US.UTF-8
 set -Ux LANG en_US.UTF-8
 
@@ -25,9 +29,11 @@ set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CC_SWITCH_CONFIG_DIR $XDG_CONFIG_HOME/cc-switch
 set -gx CLAUDE_CONFIG_DIR $XDG_CONFIG_HOME/claude
 set -gx CODEX_HOME $XDG_CONFIG_HOME/codex
+set -gx AWS_SHARED_CREDENTIALS_FILE $XDG_CONFIG_HOME/aws/credentials
+set -gx AWS_CONFIG_FILE $XDG_CONFIG_HOME/aws/config
 
-set -gx no_proxy "localhost,127.0.0.1,.noman.work"
-set -gx NO_PROXY "localhost,127.0.0.1,.noman.work"
+set -gx no_proxy "localhost,127.0.0.1,.noman.work,165.154.235.110"
+set -gx NO_PROXY "localhost,127.0.0.1,.noman.work,165.154.235.110"
 
 set -gx ANTHROPIC_BASE_URL http://127.0.0.1:15721
 set -gx ANTHROPIC_AUTH_TOKEN proxy-placeholder
@@ -36,6 +42,7 @@ fish_add_path -g $HOME/.local/bin
 fish_add_path -g $XDG_DATA_HOME/cargo/bin
 fish_add_path -g $XDG_DATA_HOME/npm/bin
 fish_add_path -g $XDG_DATA_HOME/solana/install/active_release/bin
+fish_add_path -g $XDG_CACHE_HOME/.bun/bin
 fish_add_path -g $XDG_CONFIG_HOME/.foundry/bin
 
 if test -f /opt/homebrew/bin/brew
