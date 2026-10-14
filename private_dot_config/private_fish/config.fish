@@ -46,6 +46,6 @@ if test -f /opt/homebrew/bin/brew
 end
 
 if status is-interactive; and not set -q TMUX; and not set -q PASEO_TERMINAL_ID
-    exec tmux new-session -A -s genesis
+    tmux new-session -A -s genesis
 end
 
