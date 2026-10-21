@@ -25,8 +25,6 @@ set -gx CUDA_CACHE_PATH $XDG_CACHE_HOME/nv
 set -gx CC_SWITCH_CONFIG_DIR $XDG_CONFIG_HOME/cc-switch
 set -gx CLAUDE_CONFIG_DIR $XDG_CONFIG_HOME/claude
 set -gx CODEX_HOME $XDG_CONFIG_HOME/codex
-set -gx AWS_SHARED_CREDENTIALS_FILE $XDG_CONFIG_HOME/aws/credentials
-set -gx AWS_CONFIG_FILE $XDG_CONFIG_HOME/aws/config
 
 set -gx no_proxy "localhost,127.0.0.1,.noman.work"
 set -gx NO_PROXY "localhost,127.0.0.1,.noman.work"
@@ -48,4 +46,3 @@ end
 if status is-interactive; and not set -q TMUX; and not set -q PASEO_TERMINAL_ID
     tmux new-session -A -s genesis
 end
-
